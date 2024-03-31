@@ -4,8 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200..700&family=Pacifico&display=swap');
+        .theme-icon {
+          background-color: #b1dddf;
+          height: 100px;
+          width: 100px;
+          margin: 10px;
+          font-size: 50px;
+          padding: 10px;
+          border-radius: 10px;
+          border: solid 1px white;
+          cursor: pointer;
+        }
+        h1{
+            color: tomato;
+            font-weight: bolder;
+            text-align: center;
+            font-family: "Lobster", sans-serif;
+             font-weight: 400;
+            font-style: normal;
+           font-size: 50px;
+  }
+        .container {
+          height: 380px;
+          width: 400px;
+          display: flex;
+          padding: 5px;
+          justify-content: center;
+          margin: 0 auto;
+        }
+        .text
+        {
+            font-family: "Lobster", sans-serif;
+             font-weight: 400;
+            font-style: normal;
+           font-size: 20px; 
+           text-align: center;
+           margin-top:  -200px;
+        }
+        .theme-light
+        {
+            background-color: orange;
+            color: black;
+        }
+
+        .theme-dark
+        {
+            background-color: black;
+            color:white;
+        }
+      </style>
 </head>
-<body>
-    <h1>dark light them switcher</h1>
+<body id="body" class="theme-light theme-dark">
+    <h1>Dark-Light Theme Switcher</h1>
+    <div class="container">
+        <img class="theme-icon active" id="dark"  onclick="darkMode()" src="./img/night-mode (1).png">
+        <img class="theme-icon active" id="light"  onclick="lightMode()" src="./img/light1.png">
+    </div>
+  
+
+        <script>
+            function darkMode()
+            {
+                const darkImg = document.getElementById("dark");
+                darkImg.classList.add("active");
+
+                const lightImg=document.getElementById("light")
+                lightImg.classList.remove("active")
+
+                const body=document.getElementById("body")
+                body.className="theme-dark";
+            }
+
+            function lightMode()
+            {
+
+                const lightImg=document.getElementById("light")
+                lightImg.classList.add("active");
+
+                const darkImg=document.getElementById("dark");
+                darkImg.classList.remove("active");
+
+                const body=document.getElementById("body")
+                body.className="theme-light";
+            }
+        </script>
 </body>
 </html>
